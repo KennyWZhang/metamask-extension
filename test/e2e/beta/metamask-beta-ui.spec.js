@@ -355,8 +355,8 @@ describe('MetaMask', function () {
       await seedTextArea.sendKeys(testSeedPhrase)
       await delay(regularDelayMs)
 
-      await driver.findElement(By.id('password-box')).sendKeys('correct horse battery staple')
-      await driver.findElement(By.id('password-box-confirm')).sendKeys('correct horse battery staple')
+      await driver.findElements(By.css('input'))[0].sendKeys('correct horse battery staple')
+      await driver.findElements(By.css('input'))[1].sendKeys('correct horse battery staple')
       await driver.findElement(By.css('button:nth-child(2)')).click()
       await delay(regularDelayMs)
     })
